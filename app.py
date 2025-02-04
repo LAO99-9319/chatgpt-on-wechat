@@ -56,6 +56,11 @@ from config import load_config
 from plugins import *
 import threading
 
+def send_wechat_group_message(message):
+    """ 发送消息到企业微信群 """
+    data = {"msgtype": "text", "text": {"content": message}}
+    response = requests.post(WEBHOOK, json=data).json()
+    return response
 
 def sigterm_handler_wrap(_signo):
     old_handler = signal.getsignal(_signo)
