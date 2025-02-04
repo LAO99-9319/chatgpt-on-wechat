@@ -1,4 +1,9 @@
 # encoding:utf-8
+import os
+import json
+import requests
+from flask import Flask, request
+from wechatpy.enterprise import WeChatClient  # 企业微信 API
 
 import os
 import signal
